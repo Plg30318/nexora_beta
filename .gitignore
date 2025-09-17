@@ -1,0 +1,28 @@
+# Maven / Java
+target/
+*.jar
+*.war
+*.ear
+*.class
+*.log
+*.tmp
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+.project
+.classpath
+.settings/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Spring Boot
+spring.log
+
+# Archivos sensibles (no subirlos, usar env/profiles)
+*.env
+application-*.yml.local
+application-*.properties.local
