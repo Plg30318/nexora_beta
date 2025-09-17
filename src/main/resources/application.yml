@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5433/smartcubas
+    username: app
+    password: "app"
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.spatial.dialect.postgis.PostgisDialect
+  flyway:
+    url: jdbc:postgresql://127.0.0.1:5433/smartcubas
+    user: app
+    password: "app"
+server:
+  ports:
+  - "5433:5432"
+
