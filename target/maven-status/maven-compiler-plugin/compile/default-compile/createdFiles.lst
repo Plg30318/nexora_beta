@@ -1,5 +1,5 @@
-com\smartcubasllopis\BackendApplication.class
 com\smartcubasllopis\telemetria\TelemetriaController$TelemetriaReq.class
+com\smartcubasllopis\telemetria\PosicionCamionRepository.class
+com\smartcubasllopis\BackendApplication.class
 com\smartcubasllopis\telemetria\TelemetriaController.class
 com\smartcubasllopis\telemetria\PosicionCamionStub.class
-com\smartcubasllopis\telemetria\PosicionCamionRepository.class

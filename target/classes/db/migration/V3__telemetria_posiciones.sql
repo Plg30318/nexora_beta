@@ -1,18 +1,12 @@
-CREATE EXTENSION IF NOT EXISTS postgis;
-
-CREATE TABLE IF NOT EXISTS camion (
-  id BIGSERIAL PRIMARY KEY,
-  matricula TEXT UNIQUE NOT NULL,
-  activo BOOLEAN NOT NULL DEFAULT TRUE,
-  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
-);
+-- Posiciones de camión (telemetría)
+-- (Extensiones PostGIS ya se activan en V1)
 
 CREATE TABLE IF NOT EXISTS posicion_camion (
   id            BIGSERIAL PRIMARY KEY,
-  camion_id     BIGINT NOT NULL,
+  camion_id     BIGINT NOT NULL REFERENCES camion(id),
   geom          GEOGRAPHY(Point,4326) NOT NULL,
   velocidad_kmh NUMERIC(6,2),
-  carga_kg      NUMERIC(10,2),
+  carga_kg      NUMERIC(10,2),            -- si NO la quieres, bórrala aquí
   heading       NUMERIC(6,2),
   ts            TIMESTAMPTZ NOT NULL
 );

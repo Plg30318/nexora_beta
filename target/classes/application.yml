@@ -2,19 +2,22 @@ spring:
   datasource:
     url: jdbc:postgresql://127.0.0.1:5433/smartcubas
     username: app
-    password: "app"
-    driver-class-name: org.postgresql.Driver
+    password: app
+    # driver-class-name: org.postgresql.Driver  # opcional, Boot lo infiere
   jpa:
     hibernate:
       ddl-auto: validate
+    # No fuerces un dialecto PostGIS en Hibernate 6. Si quieres, puedes
+    # especificar el general de PostgreSQL (opcional):
     properties:
       hibernate:
-        dialect: org.hibernate.spatial.dialect.postgis.PostgisDialect
+        dialect: org.hibernate.dialect.PostgreSQLDialect
   flyway:
+    # puedes omitir estas tres si quieres que use el mismo datasource;
+    # si las dejas, que sean coherentes:
     url: jdbc:postgresql://127.0.0.1:5433/smartcubas
     user: app
-    password: "app"
-server:
-  ports:
-  - "5433:5432"
+    password: app
 
+server:
+  port: 8080

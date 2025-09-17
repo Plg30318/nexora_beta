@@ -5,7 +5,7 @@ services:
       POSTGRES_DB: smartcubas
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-    ports: ["5432:5432"]
+    ports: ["5433:5432"]
   redis:
       image: redis:7
       ports: ["6379:6379"]
